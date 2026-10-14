@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111b33">
+  <title>LearnLab | General Foundations</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="app-shell">
+    <header class="site-header">
+      <a class="brand" href="#main" aria-label="LearnLab home"><span class="brand-icon" aria-hidden="true">{ }</span> LearnLab</a>
+      <span class="header-tag">GENERAL FOUNDATIONS</span>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">YOUR LEARNING SPACE</p>
+          <h1 id="page-title">Build your <span>tech foundations.</span></h1>
+          <p>Three practical skills. Bite-sized lessons, hands-on examples, and quick checks to see what you know.</p>
+          <div class="hero-meta"><span>◷ &nbsp; 20–30 min</span><span>◈ &nbsp; Beginner friendly</span></div>
+        </div>
+        <div class="hero-art" aria-hidden="true"><div class="terminal-top"><i></i><i></i><i></i></div><div class="terminal-body"><p><b>$</b> git init</p><p class="dim">Initialized empty repository</p><p><b>$</b> learn --something-new</p><p class="success">✓ You're on your way!</p><span class="cursor"></span></div></div>
+      </section>
+
+      <section class="workspace" aria-labelledby="topics-title">
+        <div class="workspace-top"><div><p class="eyebrow">EXPLORE THE TOPICS</p><h2 id="topics-title">Choose your learning path</h2></div><div class="progress-wrap"><span id="progress-label">0 of 3 completed</span><div class="progress-track" role="progressbar" aria-label="Learning progress" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" id="progress-bar"><span id="progress-fill"></span></div></div></div>
+        <div class="tabs" role="tablist" aria-label="Learning topics">
+          <button class="tab is-active" role="tab" id="tab-git" aria-selected="true" aria-controls="panel-git" tabindex="0" data-topic="git"><span class="tab-icon" aria-hidden="true">⌘</span><span><strong>Learn About Git</strong><small>Version control</small></span><span class="checkmark" aria-hidden="true"></span></button>
+          <button class="tab" role="tab" id="tab-search" aria-selected="false" aria-controls="panel-search" tabindex="-1" data-topic="search"><span class="tab-icon" aria-hidden="true">⌕</span><span><strong>Google Like a Pro</strong><small>Smart searching</small></span><span class="checkmark" aria-hidden="true"></span></button>
+          <button class="tab" role="tab" id="tab-code" aria-selected="false" aria-controls="panel-code" tabindex="-1" data-topic="code"><span class="tab-icon" aria-hidden="true">&lt;/&gt;</span><span><strong>Programming Basics</strong><small>Core concepts</small></span><span class="checkmark" aria-hidden="true"></span></button>
+        </div>
+
+        <section class="lesson" id="panel-git" role="tabpanel" aria-labelledby="tab-git" tabindex="0">
+          <div class="lesson-heading"><span class="lesson-number">01 / VERSION CONTROL</span><h3>Git keeps track of your work.</h3><p>Git records changes to files so you can experiment, collaborate, and safely return to an earlier version.</p></div>
+          <div class="lesson-grid"><article class="info-card"><div class="card-icon">↳</div><h4>Working directory</h4><p>Edit your project files on your computer.</p></article><article class="info-card"><div class="card-icon">＋</div><h4>Staging area</h4><p>Select the changes you want in your next snapshot.</p></article><article class="info-card"><div class="card-icon">✓</div><h4>Repository</h4><p>Save a commit in your project's history.</p></article></div>
+          <div class="example"><div class="example-heading"><strong>Essential Git commands</strong><span>TERMINAL</span></div><pre><code><span class="comment"># Start tracking a project</span>
+git init
+<span class="comment"># Check what changed</span>
+git status
+<span class="comment"># Stage changes and save them</span>
+git add .
+git commit -m "Add home page"
+<span class="comment"># View previous commits</span>
+git log --oneline</code></pre></div>
+          <div class="tip"><strong>Remember:</strong> Git tracks versions locally; GitHub is a platform where you can host and collaborate on Git repositories.</div>
+          <div class="quiz" data-quiz="git"><p class="eyebrow">QUICK KNOWLEDGE CHECK</p><h4>Which command saves your staged changes as a new version?</h4><div class="answers"><button data-answer="a">git status</button><button data-answer="b">git commit</button><button data-answer="c">git init</button></div><p class="feedback" role="status" aria-live="polite"></p></div>
+        </section>
+
+        <section class="lesson" id="panel-search" role="tabpanel" aria-labelledby="tab-search" tabindex="0" hidden>
+          <div class="lesson-heading"><span class="lesson-number">02 / SEARCH SKILLS</span><h3>Find better answers, faster.</h3><p>Use focused keywords and search operators to cut through irrelevant results. Verify answers with trusted sources.</p></div>
+          <div class="lesson-grid"><article class="info-card"><div class="card-icon">“ ”</div><h4>Exact phrase</h4><p>Quotes search for words in that exact order.</p><code>"flexbox tutorial"</code></article><article class="info-card"><div class="card-icon">−</div><h4>Exclude terms</h4><p>Use a minus sign to remove unwanted matches.</p><code>python -snake</code></article><article class="info-card"><div class="card-icon">◎</div><h4>Search a site</h4><p>Limit your search to one website or domain.</p><code>site:developer.mozilla.org</code></article></div>
+          <div class="builder"><div><p class="eyebrow">INTERACTIVE PRACTICE</p><h4>Build a smarter search</h4><p>Type a topic and choose how you want to narrow your results.</p></div><label for="search-topic">What are you searching for?</label><input id="search-topic" maxlength="90" type="text" placeholder="e.g. JavaScript arrays" value="JavaScript arrays"><fieldset><legend>Refine your search</legend><label><input id="exact-match" type="checkbox"> Exact phrase</label><label><input id="site-only" type="checkbox"> Only MDN docs</label><label><input id="exclude-video" type="checkbox"> Exclude videos</label></fieldset><div class="query-output"><code id="search-result">JavaScript arrays</code><button id="copy-query" type="button">Copy query</button></div><p id="copy-status" class="helper" role="status" aria-live="polite">Tip: You can paste this query into a search engine.</p></div>
+          <div class="tip"><strong>Pro tip:</strong> Check the publication date, source expertise, and evidence before trusting a result. A top-ranked page is not automatically correct.</div>
+          <div class="quiz" data-quiz="search"><p class="eyebrow">QUICK KNOWLEDGE CHECK</p><h4>Which operator restricts Google results to one website?</h4><div class="answers"><button data-answer="a">site:</button><button data-answer="b">only:</button><button data-answer="c">domain=</button></div><p class="feedback" role="status" aria-live="polite"></p></div>
+        </section>
+
+        <section class="lesson" id="panel-code" role="tabpanel" aria-labelledby="tab-code" tabindex="0" hidden>
+          <div class="lesson-heading"><span class="lesson-number">03 / PROGRAMMING</span><h3>Think like a programmer.</h3><p>Programs follow instructions. Start with values, make decisions, repeat actions, and group reusable logic.</p></div>
+          <div class="lesson-grid"><article class="info-card"><div class="card-icon">x</div><h4>Variables</h4><p>Store information under a name.</p><code>let score = 5;</code></article><article class="info-card"><div class="card-icon">◇</div><h4>Conditions</h4><p>Run code based on a true/false check.</p><code>if (score &gt; 3)</code></article><article class="info-card"><div class="card-icon">↻</div><h4>Loops & functions</h4><p>Repeat work and create reusable actions.</p><code>function greet() {}</code></article></div>
+          <div class="builder"><p class="eyebrow">INTERACTIVE PRACTICE</p><h4>Run a tiny JavaScript example</h4><p>Change the number, then run the example to see how a condition works.</p><label for="score-input">Your score (0–10)</label><input id="score-input" type="number" min="0" max="10" step="1" value="5"><pre class="code-example"><code>const score = <span id="score-preview">5</span>;
+if (score &gt;= 5) {
+  console.log("Great job!");
+} else {
+  console.log("Keep practicing!");
+}</code></pre><button class="primary-button" type="button" id="run-code">▶ Run example</button><p id="code-result" role="status" aria-live="polite" class="result">Output will appear here.</p></div>
+          <div class="tip"><strong>Try next:</strong> Learn arrays, objects, events, and how HTML, CSS, and JavaScript work together.</div>
+          <div class="quiz" data-quiz="code"><p class="eyebrow">QUICK KNOWLEDGE CHECK</p><h4>What does a variable do in a program?</h4><div class="answers"><button data-answer="a">Styles a web page</button><button data-answer="b">Stores a value</button><button data-answer="c">Deletes a function</button></div><p class="feedback" role="status" aria-live="polite"></p></div>
+        </section>
+      </section>
+      <footer><p>LearnLab · Practice, experiment, repeat.</p><button type="button" id="reset-progress">Reset progress</button></footer>
+    </main>
+  </div>
+</body>
+</html>
